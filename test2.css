@@ -1,0 +1,10 @@
+#canvas1 {
+    width: 1920;
+    height: 1080px;
+    border: 1px solid plack;
+    background: #675b92;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
