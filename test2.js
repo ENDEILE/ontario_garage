@@ -5,6 +5,7 @@ canvas.width = 1880;
 canvas.hight = 1080;
 
 clicks = 2;
+x = 0;
 
 const keys = [];
 
@@ -47,27 +48,18 @@ function animate()
     ctx.drawImage(but,1670,0,200,30);
 
     if(show)
-     ctx.drawImage(tools,192,200,200);
+     ctx.drawImage(tools,0,-4,1000,200);
 
     requestAnimationFrame(animate);
 }
 
 function showToolsList(event) {
  
-    show = true;
-
-  //  if(clicks==1)
-   // show = true;
-
-   clicks = clicks - 1;
-
-   console.log(clicks);
-
-  if(clicks==0)
-     clicks = 2;
-    
-     if(clicks==0 || clicks==2)
-     show = false;
+    if(show ==true){
+     show=false;
+     x = x + 100;}
+     else show = true;
+ 
   }
   
   
