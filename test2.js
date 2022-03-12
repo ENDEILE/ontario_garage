@@ -59,14 +59,22 @@ function showToolsList(event) {
      show=false;
      x = x + 100;}
      else show = true;
- 
   }
+
+  document.addEventListener("click", printMousePos);
   
   
 
-  document.addEventListener("click", showToolsList);
+  //document.addEventListener("click", showToolsList);
 
-//  document.addEventListener("click", clicks-1);
+function printMousePos(event) {
 
+     console.log(event.clientX,event.clientY);
+      
+     if(event.clientX>1133&&event.clientY<151)
+     show = true;  
+  }  
+    
+  
 
 animate();
