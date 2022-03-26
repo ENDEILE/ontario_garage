@@ -80,9 +80,8 @@ function printMousePos(event) {
 
 function summonCar(event) {
      
-    if(event.clientX<188&&event.clientY<177)
+    if(event.clientX>188&&event.clientY<177&&event.clientX<389)
      showCar= true;
-    else showCar = false 
  }  
 //    
   
