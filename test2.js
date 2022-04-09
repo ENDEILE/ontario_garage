@@ -38,13 +38,13 @@ var showTools = false;
 
 var showCar = false;
 
+var showWheels = false;
+
 //отображение ирговых элементов на экране
 function animate()
 {ctx.imageSmoothingEnabled = false;
 
     ctx.drawImage(background,0,0,1880,200);
-
-    ctx.drawImage(testwheel,390,-21,1100,160);
 
     ctx.drawImage(createCar,192,0,200,30);
 
@@ -58,6 +58,9 @@ function animate()
 
      if(showTools)
      ctx.drawImage(testwheelM,0,-4,1000,200);
+     
+     if(showWheels)
+     ctx.drawImage(testwheel,390,-21,1100,160);
 
     requestAnimationFrame(animate);
     
@@ -93,6 +96,10 @@ function summonCar(event) {
      
     if(event.clientX>188&&event.clientY<177&&event.clientX<389)
      showCar= true;
+
+     if(event.clientX>151 && event.clientX<246 && event.clientY>400 && event.clientY<533)
+     showWheels = true;
+
  }  
 //    
   
