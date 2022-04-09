@@ -25,10 +25,16 @@ createCar.src = "da.png";
 const tools = new Image();
 tools.src = "parts.png";
 
+const testwheel = new Image();
+testwheel.src = "wheels[test].png";
+
+const testwheelM = new Image();
+testwheelM.src = "wheelsM[test].png";
+
 //
 
 //состояние изоброжений на экране
-var show = false;
+var showTools = false;
 
 var showCar = false;
 
@@ -38,6 +44,8 @@ function animate()
 
     ctx.drawImage(background,0,0,1880,200);
 
+    ctx.drawImage(testwheel,390,-21,1100,160);
+
     ctx.drawImage(createCar,192,0,200,30);
 
     if(showCar) 
@@ -45,8 +53,11 @@ function animate()
 
     ctx.drawImage(but,1670,0,200,30);
 
-    if(show)
+    if(showTools)
      ctx.drawImage(tools,0,-4,1000,200);
+
+     if(showTools)
+     ctx.drawImage(testwheelM,0,-4,1000,200);
 
     requestAnimationFrame(animate);
     
@@ -57,10 +68,10 @@ function animate()
 
 function showToolsList(event) {
  
-    if(show ==true){
-     show=false;
+    if(showTools ==true){
+     showTools=false;
      x = x + 100;}
-     else show = true;
+     else showTools = true;
   }
 
   document.addEventListener("click", printMousePos);
@@ -74,8 +85,8 @@ function printMousePos(event) {
      console.log(event.clientX,event.clientY);
       
      if(event.clientX>1133&&event.clientY<151)
-     show = true;
-     else show = false 
+     showTools = true;
+     else showTools = false 
   }  
 
 function summonCar(event) {
