@@ -11,7 +11,7 @@ x = 0;
 
 //загрузка спрайтов и изображений
 const car_1 = new Image();
-car_1.src = "car.png";
+car_1.src = "car1.png";
 
 const background = new Image();
 background.src = "garage.png";
@@ -25,12 +25,28 @@ createCar.src = "da.png";
 const tools = new Image();
 tools.src = "parts.png";
 
-const testwheel = new Image();
-testwheel.src = "wheels[test].png";
+const wheel = new Image();
+wheel.src = "wheels[test].png";
 
-const testwheelM = new Image();
-testwheelM.src = "wheelsM[test].png";
+var partsM = [];
+var i;
+for (i = 1; i < 5; i++) {
 
+    const pM = new Image();
+    pM.src = `part${i}M.png`;
+    partsM.push(pM);
+
+}
+
+var parts = [];
+//var i;
+for (i = 1; i < 5; i++) {
+
+    const p = new Image();
+    p.src = `part${i}.png`;
+    parts.push(p);
+
+}
 //
 
 //состояние изоброжений на экране
@@ -53,15 +69,18 @@ function animate()
 
     ctx.drawImage(but,1670,0,200,30);
 
-    if(showTools)
+    if(showTools){
      ctx.drawImage(tools,0,-4,1000,200);
-
-     if(showTools)
-     ctx.drawImage(testwheelM,0,-4,1000,200);
+       
+        var i;
+        for (i = 0; i < 4; i++) {
+            ctx.drawImage(partsM[i],0,-4,1000,200);
+        }
+        //
+        
+    }
      
-     if(showWheels)
-     ctx.drawImage(testwheel,390,-21,1100,160);
-
+     
     requestAnimationFrame(animate);
     
 }
