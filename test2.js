@@ -69,15 +69,19 @@ function animate()
 
     ctx.drawImage(but,1670,0,200,30);
 
+    if(showWheels)
+    ctx.drawImage(parts[2],390,-21,1100,160);
+
     if(showTools){
      ctx.drawImage(tools,0,-4,1000,200);
-       
+    
+    
         var i;
         for (i = 0; i < 4; i++) {
             ctx.drawImage(partsM[i],0,-4,1000,200);
         }
         //
-        
+    
     }
      
      
@@ -116,7 +120,7 @@ function summonCar(event) {
     if(event.clientX>188&&event.clientY<177&&event.clientX<389)
      showCar= true;
 
-     if(event.clientX>151 && event.clientX<246 && event.clientY>400 && event.clientY<533)
+     if(event.clientX>151 && event.clientX<246 && event.clientY>400 && event.clientY<535)
      showWheels = true;
 
  }  
